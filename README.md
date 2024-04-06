@@ -1,6 +1,46 @@
-# Getting Started with Create React App
+# Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+
+This is a simple Todo web application built with React. It allows users to manage their tasks by adding, deleting, editing, and marking tasks as completed.
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps:
+
+1. Clone the repository:
+
+   ```bash
+   https://github.com/Rithrita-Kong/React-Todo-App.git
+   ```
+
+2. Navigate into the project directory:
+
+   ```bash
+   cd React-Todo-App
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+5. Open your browser and go to `http://localhost:3000` to view the app.
+
+## Features:
+
+- **Add Task:** Users can add new tasks to the list by entering task names and clicking the "Add" button.
+- **Delete Task:** Users can delete tasks from the list by clicking the delete button next to each task.
+- **Edit Task:** Users can edit task names directly inline by clicking the edit button next to each task.
+- **Mark Task as Completed:** Users can mark tasks as completed by checking the checkbox next to each task.
+- **Persisted State:** The application's state is persisted using React's state management, ensuring that tasks remain saved even after page refresh.
 
 ## Available Scripts
 
@@ -38,33 +78,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
