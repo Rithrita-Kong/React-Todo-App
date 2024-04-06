@@ -3,6 +3,7 @@
 ## Description
 
 This is a simple Todo web application built with React. It allows users to manage their tasks by adding, deleting, editing, and marking tasks as completed.
+![UI Image](./assets/UI.png)
 
 ## Getting Started
 
