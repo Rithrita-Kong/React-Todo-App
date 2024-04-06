@@ -35,7 +35,6 @@ function App() {
   function editTask(event, index) {
     const spanElement = event.target;
     spanElement.contentEditable = false;
-    console.log(spanElement);
     const newName = spanElement.textContent.trim();
     setTasks((tasks) =>
       tasks.map((task, idx) =>
@@ -45,7 +44,6 @@ function App() {
   }
 
   function deleteTask(index) {
-    console.log("Edit");
     setTasks((tasks) => {
       const copy = [...tasks];
       copy.splice(index, 1);
@@ -56,7 +54,6 @@ function App() {
   function editable(event) {
     const listItem = event.currentTarget.closest("li");
     const spanElement = listItem.querySelector("span");
-    console.log(spanElement);
     spanElement.contentEditable = true;
     spanElement.focus();
   }
