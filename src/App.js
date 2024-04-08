@@ -5,6 +5,13 @@ import {
   faPenToSquare as EditIcon,
   faTrash as DeleteIcon,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  addTask,
+  finishTask,
+  editTask,
+  deleteTask,
+  makeEditable,
+} from "./utils";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -13,49 +20,20 @@ function App() {
     { name: "Fix bug", status: false },
   ]);
 
-  function addTask(event) {
-    event.preventDefault();
-    let newTask = {
-      name: event.target.elements.taskInput.value,
-      status: false,
-    };
-    setTasks((task) => [...task, newTask]);
-    event.target.reset();
+  function handleAddTask(event) {
+    addTask(event, tasks, setTasks);
   }
 
-  function finishTask(event, index) {
-    const isChecked = event.target.checked;
-    setTasks((tasks) =>
-      tasks.map((task, idx) =>
-        idx === index ? { ...task, status: isChecked } : task
-      )
-    );
+  function handleFinishTask(event, index) {
+    finishTask(event, index, tasks, setTasks);
   }
 
-  function editTask(event, index) {
-    const spanElement = event.target;
-    spanElement.contentEditable = false;
-    const newName = spanElement.textContent.trim();
-    setTasks((tasks) =>
-      tasks.map((task, idx) =>
-        idx === index ? { ...task, name: newName } : task
-      )
-    );
+  function handleEditTask(event, index) {
+    editTask(event, index, tasks, setTasks);
   }
 
-  function deleteTask(index) {
-    setTasks((tasks) => {
-      const copy = [...tasks];
-      copy.splice(index, 1);
-      return copy;
-    });
-  }
-
-  function editable(event) {
-    const listItem = event.currentTarget.closest("li");
-    const spanElement = listItem.querySelector("span");
-    spanElement.contentEditable = true;
-    spanElement.focus();
+  function handleDeleteTask(index) {
+    deleteTask(tasks, index, setTasks);
   }
 
   return (
@@ -63,7 +41,7 @@ function App() {
       <div className="w-1/3 h-fit mx-auto mt-20 p-5 bg-white rounded-xl shadow-lg">
         <h1 className="text-3xl font-bold mb-5 text-center">Todo List</h1>
         <hr></hr>
-        <form className="relative my-5" onSubmit={addTask}>
+        <form className="relative my-5" onSubmit={(e) => handleAddTask(e)}>
           <input
             type="text"
             name="taskInput"
@@ -91,21 +69,21 @@ function App() {
               <input
                 type="checkbox"
                 className="mr-2 scale-150 "
-                onChange={(e) => finishTask(e, index)}
+                onChange={(e) => handleFinishTask(e, index)}
               />
               <span
                 className={`flex-grow ${task.status ? "line-through" : ""}`}
-                onBlur={(e) => editTask(e, index)}
+                onBlur={(e) => handleEditTask(e, index)}
               >
                 {task.name}
               </span>
-              <button className="mr-3" onClick={(e) => editable(e)}>
+              <button className="mr-3" onClick={(e) => makeEditable(e)}>
                 <FontAwesomeIcon
                   icon={EditIcon}
                   className="text-xl text-gray-400 hover:text-black"
                 />
               </button>
-              <button onClick={() => deleteTask(index)}>
+              <button onClick={() => handleDeleteTask(index)}>
                 <FontAwesomeIcon
                   icon={DeleteIcon}
                   className=" text-xl text-gray-400 hover:text-red-500"
