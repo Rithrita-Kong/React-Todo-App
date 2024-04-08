@@ -12,7 +12,7 @@ To get a local copy up and running follow these simple steps:
 1. Clone the repository:
 
    ```bash
-   https://github.com/Rithrita-Kong/React-Todo-App.git
+   git clone https://github.com/Rithrita-Kong/React-Todo-App.git
    ```
 
 2. Navigate into the project directory:
