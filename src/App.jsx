@@ -11,7 +11,7 @@ import {
   editTask,
   deleteTask,
   makeEditable,
-} from "./utils";
+} from "./utils.jsx";
 
 function App() {
   const [tasks, setTasks] = useState([
