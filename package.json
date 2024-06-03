@@ -1,7 +1,14 @@
 {
-  "name": "src",
-  "version": "0.1.0",
+  "name": "to-do-app",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -11,13 +18,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview",
-    "test": "vitest",
-    "test:coverage": "vitest run --coverage --watch=false"
   },
   "eslintConfig": {
     "extends": [
